@@ -35,7 +35,13 @@ enum custom_keycodes {
     KC_TASK_VIEW,
     KC_FILE_EXPLORER,
     KC_SCREEN_SHOT,
-    KC_CORTANA
+    KC_CORTANA,
+    WINTERM,
+    EMAIL,
+    MACRO01,
+    MACRO02,
+    MACRO03,
+    MACRO04
 };
 
 #define KC_TASK KC_TASK_VIEW
