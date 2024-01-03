@@ -1,7 +1,8 @@
 
 enum custom_keycodes {
     EMAIL = SAFE_RANGE,
-    WINTERM
+    WINTERM,
+    CLRMODS
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -17,6 +18,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case EMAIL:
             if (record->event.pressed) {
                 SEND_STRING("p.c.dunham@gmail.com");
+            }
+        case CLRMODS:
+            if (record->event.pressed) {
+                clear_mods();
             }
             return false;
     }

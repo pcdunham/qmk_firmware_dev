@@ -64,7 +64,8 @@ int SIZE_OF_TO_KEYS = sizeof(TO_KEYS)/sizeof(int);
 enum custom_layers {
     _BL,
     _FL,
-    _1L
+    _1L,
+    _2L
 };
 
 
@@ -100,18 +101,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
   KC_TRNS,  KC_TRNS,  KC_TRNS,                      KC_TRNS,                                KC_TRNS,  MO(_FL),  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
 
+    // Blender
+
+[_2L] = LAYOUT(
+  TO(_BL),  KC_MYCM,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  QK_LOCK,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  QK_GESC,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  CLRMODS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+  KC_TRNS,  KC_TRNS,  KC_TRNS,                      KC_TRNS,                                KC_TRNS,  MO(_FL),  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
+
     // Function layer
 
 [_FL] = LAYOUT(
   QK_BOOT,  KC_MYCM,  KC_WHOM,  WINTERM,  KC_CPNL,  KC_WBAK,  KC_WFWD,  KC_MPLY,  KC_MSTP,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,   _______,  _______,  _______,  _______,  _______,
-  _______,  TO(_1L),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  TO(_BL),  _______,  _______,   _______,  _______,  _______,  _______,  _______,
+  _______,  TO(_1L),  TO(_2L),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  TO(_BL),  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  EMAIL,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             _______,  _______,  _______,  _______,
-  _______,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             RGB_VAI,  _______,  _______,  _______,  _______,
+  _______,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  _______,  _______,  CLRMODS,  _______,  _______,  _______,  _______,             RGB_VAI,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,                      _______,                                _______,  KC_TRNS,  _______,  RGB_RMOD,  RGB_VAD,  RGB_MOD,  _______,  _______),
 
 };
-
 
 // RGB LED layout for GMMK 2 96%
 // By Skitzo2000
@@ -219,13 +229,13 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
             rgb_matrix_set_color(ESC_KEY, ESC_KEY_COLORS);
 
             break;
-        /*
+
         case _2L:  //layer 2
             rgb_matrix_set_color(20, 255, 255, 255);
             set_glorious_side_96('r', RGB_AZURE);
             set_glorious_side_96('l', RGB_AZURE);
             break;
-        */
+
         case _FL:  //layer 3
             // Set number key 3 color to identify it asa the active layer
             rgb_matrix_set_color(21, 255, 255, 255);
