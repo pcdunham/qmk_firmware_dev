@@ -49,23 +49,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         MACRO04,   RGB_SAD,  RGB_SPD, _______,  _______,
         EMAIL,     _______,           _______),
 
-    // Mouse Key Layer
+    // Mouse Key Mod Layer
 
     [L2] = LAYOUT_numpad_6x5(
-        _______,   TO(L3),   _______, _______,  _______,
-        LCTL(LSFT(KC_BTN2)),_______,RSFT(KC_BTN3), RSFT(KC_BTN2),  KC_ACL0,
-        LALT(KC_BTN1),   KC_BTN1,  KC_MS_U, KC_BTN2,  KC_ACL1,
-        LCA(KC_BTN2),   KC_MS_L,  KC_BTN3, KC_MS_R,
-        _______,   _______,  KC_MS_D, _______,  KC_ACL2,
-        EMAIL,     KC_LGUI,           _______),
+        _______,   TO(L3),  LCTL(KC_BTN1),LCTL(KC_BTN3),LCTL(KC_BTN2),
+        LCTL(LSFT(KC_BTN1)),LSFT(KC_BTN1),LSFT(KC_BTN3),LSFT(KC_BTN2),  _______,
+        LCTL(LSFT(KC_BTN2)),KC_BTN1, KC_BTN3, KC_BTN2, _______,
+        LCA(KC_BTN1),   _______,  _______, _______,
+        LCA(KC_BTN2),   _______,  _______, _______, _______,
+        _______,  _______,           _______),
+
+    // Mouse Key Layer
 
     [L3] = LAYOUT_numpad_6x5(
         _______,   TO(BASE), _______, _______,   _______,
-        LCTL(LSFT(KC_BTN2)),_______,RSFT(KC_BTN3), RSFT(KC_BTN2),  KC_ACL0,
-        LALT(KC_BTN1),   KC_BTN1,  KC_MS_U, KC_BTN2,  KC_ACL1,
-        LCA(KC_BTN2),   KC_MS_L,  KC_BTN3, KC_MS_R,
-        _______,   _______,  KC_MS_D, _______,  KC_ACL2,
-        _______,   KC_LGUI,           _______),
+        LCTL(LSFT(KC_BTN1)),LSFT(KC_BTN1),LSFT(KC_BTN3),LSFT(KC_BTN2),  KC_ACL0,
+        LCTL(LSFT(KC_BTN2)),   KC_BTN1,  KC_MS_U, KC_BTN2,  KC_ACL1,
+        LCA(KC_BTN1),   KC_MS_L,  KC_BTN3, KC_MS_R,
+        LCA(KC_BTN2),   _______,  KC_MS_D, _______,  KC_ACL2,
+        LCTL(KC_BTN1),  _______,           _______),
 
 };
 
