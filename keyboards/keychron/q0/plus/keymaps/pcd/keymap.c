@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Base Layer
 
     [BASE] = LAYOUT_numpad_6x5(
-        KC_MUTE,   TO(FUNC), KC_ESC,  KC_BSPC,  KC_TAB,
+        TO(FUNC),  KC_MUTE,  KC_ESC,  KC_BSPC,  KC_TAB,
         WINTERM,   KC_NUM,   KC_PSLS, KC_PAST,  KC_PMNS,
         MACRO02,   KC_P7,    KC_P8,   KC_P9,    KC_PPLS,
         MACRO03,   KC_P4,    KC_P5,   KC_P6,
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Function Layer
 
     [FUNC] = LAYOUT_numpad_6x5(
-        _______,   TO(L2),   KC_MUTE, KC_VOLD,  KC_VOLU,
+        TO(L2),    KC_MUTE, KC_VOLD,  KC_VOLU,  _______,
         MACRO01,   RGB_MOD,  RGB_VAI, RGB_HUI,  KC_DEL,
         MACRO02,   RGB_RMOD, RGB_VAD, RGB_HUD,  _______,
         MACRO03,   RGB_SAI,  RGB_SPI, _______,
@@ -52,22 +52,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Mouse Key Mod Layer
 
     [L2] = LAYOUT_numpad_6x5(
-        _______,   TO(L3),  LCTL(KC_BTN1),LCTL(KC_BTN3),LCTL(KC_BTN2),
-        LCTL(LSFT(KC_BTN1)),LSFT(KC_BTN1),LSFT(KC_BTN3),LSFT(KC_BTN2),  _______,
-        LCTL(LSFT(KC_BTN2)),KC_BTN1, KC_BTN3, KC_BTN2, _______,
-        LCA(KC_BTN1),   _______,  _______, _______,
-        LCA(KC_BTN2),   _______,  _______, _______, _______,
-        _______,  _______,           _______),
+        TO(L3),              LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), _______,
+        LCTL(LSFT(KC_BTN1)), LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), _______,
+        LCTL(LSFT(KC_BTN2)), KC_BTN1,       KC_BTN3,       KC_BTN2,       _______,
+        LCA(KC_BTN1),        LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
+        LCA(KC_BTN2),        LSA(KC_BTN1),  LSA(KC_BTN3),  LSA(KC_BTN2),  _______,
+        _______,             _______,                      _______),
 
     // Mouse Key Layer
 
     [L3] = LAYOUT_numpad_6x5(
-        _______,   TO(BASE), _______, _______,   _______,
-        LCTL(LSFT(KC_BTN1)),LSFT(KC_BTN1),LSFT(KC_BTN3),LSFT(KC_BTN2),  KC_ACL0,
-        LCTL(LSFT(KC_BTN2)),   KC_BTN1,  KC_MS_U, KC_BTN2,  KC_ACL1,
-        LCA(KC_BTN1),   KC_MS_L,  KC_BTN3, KC_MS_R,
-        LCA(KC_BTN2),   _______,  KC_MS_D, _______,  KC_ACL2,
-        LCTL(KC_BTN1),  _______,           _______),
+        TO(BASE),  _______,  _______,  _______, _______,
+        _______,   _______,  _______,  _______,  KC_ACL0,
+        _______,   KC_BTN1,  KC_MS_U,  KC_BTN2,  KC_ACL1,
+        _______,   KC_MS_L,  KC_BTN3,  KC_MS_R,
+        _______,   _______,  KC_MS_D,  _______,  KC_ACL2,
+        _______,   _______,            _______),
 
 };
 

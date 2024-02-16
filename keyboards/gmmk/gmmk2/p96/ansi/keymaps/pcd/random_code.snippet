@@ -1,0 +1,28 @@
+extern uint64_t key_state[4]; // not exposed either == could break at any time
+
+bool is_locked(uint16_t keycode) {
+    // note, im not too sure if this is how the data is "encoded" because it uses a lengthy macro with ternaries, which i didn't really try to understand
+    // ... but this sounds reasonable :P
+    uint8_t byte = keycode / 64;
+    uint8_t bit  = keycode % 64;
+
+    return key_state[byte] & ((uint64_t)1 << bit);
+}
+
+bool rgb_matrix_indicators_user(void) {
+    uint16_t keycodes = {KC_LSFT, KC_LALT /* etc */};
+
+    for (uint8_t i = 0; i < ARRAY_SIZE(keycodes); ++i) {
+        uint16_t keycode = keycodes[i];
+
+        // it aint locked, move onto checking the next one
+        if (!is_locked(keycode)) {
+            continue;
+        }
+
+        // draw it
+        // you can either look for it on the keymap (see last example on RGB docs, does a similar thing) - slower, more complex, but adjusts to changes
+        // ... or hardcode the position(s) where each keycode is placed (eg: another array) - easier but naive
+        todo();
+    }
+}

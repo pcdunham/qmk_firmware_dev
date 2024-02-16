@@ -21,6 +21,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
         case CLRMODS:
             if (record->event.pressed) {
+                cancel_key_lock();
                 clear_mods();
             }
             return false;
