@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Mouse Key Mod Layer
 
     [L2] = LAYOUT_numpad_6x5(
-        TO(L3),              LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), _______,
+        TO(L3),              LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), KC_DEL,
         LCTL(LSFT(KC_BTN1)), LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), _______,
         LCTL(LSFT(KC_BTN2)), KC_BTN1,       KC_BTN3,       KC_BTN2,       _______,
         LCA(KC_BTN1),        LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
