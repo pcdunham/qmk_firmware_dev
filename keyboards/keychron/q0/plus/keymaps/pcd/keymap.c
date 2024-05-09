@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   RGB_RMOD, RGB_VAD, RGB_HUD,  _______,
         _______,   RGB_SAI,  RGB_SPI, _______,
         _______,   RGB_SAD,  RGB_SPD, _______,  _______,
-        _______,   ________,        _______),
+        _______,   _______,           _______),
 
     // NUMPAD Layer 3
 
