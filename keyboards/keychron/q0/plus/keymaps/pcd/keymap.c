@@ -20,6 +20,21 @@
 
 // clang-format off
 
+int KCMB[] =  {10, 11, 12};
+int SFTMB[] =  {5, 6, 7};
+int CTLMB[] =  {0, 1, 2};
+int ALTMB[] =  {15, 16, 17};
+
+int SIZE_OF_KCMB_KEYS = sizeof(KCMB)/sizeof(int);
+int SIZE_OF_SFTMB_KEYS = sizeof(SFTMB)/sizeof(int);
+int SIZE_OF_CTLMB_KEYS = sizeof(CTLMB)/sizeof(int);
+int SIZE_OF_ALTMB_KEYS = sizeof(ALTMB)/sizeof(int);
+
+#define KCMB_COLORS  RGB_ORANGE
+#define SFTMB_COLORS RGB_CYAN
+#define CTLMB_COLORS RGB_MAGENTA
+#define ALTMB_COLORS RGB_YELLOW
+
 enum layers {
 
     BLEND,
@@ -35,12 +50,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Blender Mouse Key Mod Layer
 
     [BLEND] = LAYOUT_numpad_6x5(
-        TO(RGBL),  LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), KC_DEL,
-        KC_GRV,    LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), LCTL(KC_X),
-        LCTL(KC_GRV),KC_BTN1,     KC_BTN3,       KC_BTN2,       LCTL(KC_C),
-        KC_P5,     LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
-        KC_TAB,    LSA(KC_BTN1),  MEH(KC_BTN1),  LCA(KC_BTN2),  LCTL(KC_V),
-        LCTL(KC_Z),LCA(KC_BTN1),                 OSL(FLIP)),
+        TO(RGBL),    LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), KC_DEL,
+        KC_TAB,      LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), LCTL(KC_X),
+        KC_GRV,      KC_BTN1,       KC_BTN3,       KC_BTN2,       LCTL(KC_C),
+        KC_P5,       LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
+        LCTL(KC_GRV),LSA(KC_BTN1),  MEH(KC_BTN1),  LCA(KC_BTN2),  LCTL(KC_V),
+        LCTL(KC_Z),  LCA(KC_BTN1),                 KC_ENT),
 
 
     // RGB Layer
@@ -115,12 +130,26 @@ bool rgb_matrix_indicators_user(void) {
             rgb_matrix_set_color(19, 255, 255, 255);
             // Set FN Key Color
             rgb_matrix_set_color(25, RGB_MAGENTA);
+            // Set Mouse Key Colors
+            for(int i = 0; i < SIZE_OF_KCMB_KEYS; i++) {
+                rgb_matrix_set_color(KCMB[i], KCMB_COLORS);
+            }
+            for(int i = 0; i < SIZE_OF_SFTMB_KEYS; i++) {
+                rgb_matrix_set_color(SFTMB[i], SFTMB_COLORS);
+            }
+            for(int i = 0; i < SIZE_OF_CTLMB_KEYS; i++) {
+                rgb_matrix_set_color(CTLMB[i], CTLMB_COLORS);
+            }
+            for(int i = 0; i < SIZE_OF_ALTMB_KEYS; i++) {
+                rgb_matrix_set_color(ALTMB[i], ALTMB_COLORS);
+            }
+
             break;
         case RGBL:  //layer 1
-            rgb_matrix_set_color(21, 255, 255, 255);
+            rgb_matrix_set_color(20, 255, 255, 255);
             break;
         case MNAV:   //Layer 2
-            rgb_matrix_set_color(20, 255, 255, 255);
+            rgb_matrix_set_color(21, 255, 255, 255);
             break;
         /* case NUMPAD:  //layer 3
             rgb_matrix_set_color(15, 255, 255, 255);

@@ -44,7 +44,7 @@ int NUM_PAD_HEPUPD_KEYS[] = {16, 17, 50, 52, 83, 85};
 int NUM_PAD_NUMBER_KEYS[] = {50, 51, 52, 67, 68, 69, 83, 84, 85, 97};
 int LETTER_KEYS[] = {37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 55, 56, 57, 58, 59, 60, 61, 62, 63, 71, 72, 73, 74, 75, 76, 77};
 int MISC_KEYS[]  =  {1, 2, 3, 4, 88};
-int RGB_KEYS[]   =  {71, 72, 73, 74, 82, 94, 95, 96};
+int RGB_KEYS[]   =  {71, 72, 73, 74, 75, 76, 82, 94, 95, 96};
 int MEDIA_KEYS[] =  {5, 6, 7, 8, 9, 10, 11};
 int ESC_KEY    =  0;
 
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,  KC_BSLS,  KC_P7,    KC_P8,    KC_P9,    KC_PPLS,
   KC_CAPS,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,            KC_ENT,   KC_P4,    KC_P5,    KC_P6,
   OSM(MOD_LSFT),KC_Z, KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,    KC_PENT,
-  OSM(MOD_LCTL),OSM(MOD_LGUI),OSM(MOD_LALT),        KC_SPC,                                 KC_RALT,  OSL(_FL),  KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT),
+  OSM(MOD_LCTL),OSM(MOD_LGUI),OSM(MOD_LALT),        KC_SPC,                                 KC_RALT,  OSL(_FL), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT),
 
     // Custom Layer for specific applications
 
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______,  TO(_1L),  TO(_2L),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  TO(_BL),  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  EMAIL,    _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             _______,  _______,  _______,  _______,
-  _______,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             RGB_VAI,  _______,  _______,  _______,  _______,
+  _______,  RGB_HUI,  RGB_HUD,  RGB_SAI,  RGB_SAD,  RGB_SPI,  RGB_SPD,  _______,  _______,  _______,  _______,  _______,             RGB_VAI,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,                      _______,                                _______,  KC_TRNS,  _______,  RGB_RMOD,  RGB_VAD,  RGB_MOD,  _______,  _______),
 
 };
