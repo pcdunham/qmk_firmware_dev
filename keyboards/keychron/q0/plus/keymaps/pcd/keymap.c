@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,      LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), LCTL(KC_X),
         KC_GRV,      KC_BTN1,       KC_BTN3,       KC_BTN2,       LCTL(KC_C),
         KC_P5,       LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
-        LCTL(KC_GRV),LSA(KC_BTN1),  MEH(KC_BTN1),  LCA(KC_BTN2),  LCTL(KC_V),
+        KC_Q,        LSA(KC_BTN1),  MEH(KC_BTN1),  LCA(KC_BTN2),  LCTL(KC_V),
         LCTL(KC_Z),  LCA(KC_BTN1),                 KC_ENT),
 
 

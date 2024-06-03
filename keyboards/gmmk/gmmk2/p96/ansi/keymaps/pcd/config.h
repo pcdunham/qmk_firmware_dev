@@ -15,9 +15,8 @@
  */
 
 #pragma once
-#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 #define RGB_MATRIX_KEYPRESSES
-#define AUTO_SHIFT_TIMEOUT 195
+#define AUTO_SHIFT_TIMEOUT 210
 #define TAPPING_TERM 200
 #define ONESHOT_TAP_TOGGLE 3
 #define ONESHOT_TIMEOUT 4000
@@ -25,4 +24,4 @@
 #define AUTO_SHIFT_NO_AUTO_REPEAT
 
 // When VIA is enabled,s dynamic layer count is limited to 3
-// #define DYNAMIC_KEYMAP_LAYER_COUNT 3
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
