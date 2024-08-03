@@ -40,17 +40,32 @@ enum layers {
     BLEND,
     RGBL,
     MNAV,
-    // NUMPAD,
-    FLIP
+    NUMPAD
+
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    [NUMPAD] = LAYOUT_numpad_6x5(
+        TO(RGBL),KC_MUTE,KC_ESC,  KC_BSPC,  KC_TAB,
+        MC_1,   KC_NUM,   KC_PSLS, KC_PAST,  KC_PMNS,
+        MC_2,   KC_P7,    KC_P8,   KC_P9,    KC_PPLS,
+        MC_3,   KC_P4,    KC_P5,   KC_P6,
+        MC_4,   KC_P1,    KC_P2,   KC_P3,    KC_PENT,
+        MC_5,   KC_P0,             KC_PDOT),
+
+    [RGBL] = LAYOUT_numpad_6x5(
+        TO(BLEND),RGB_TOG,KC_MUTE, KC_VOLD,  KC_VOLU,
+        MC_1,   RGB_MOD,  RGB_VAI, RGB_HUI,  KC_DEL,
+        MC_2,   RGB_RMOD, RGB_VAD, RGB_HUD,  _______,
+        MC_3,   RGB_SAI,  RGB_SPI, KC_MPRV,
+        MC_4,   RGB_SAD,  RGB_SPD, KC_MPLY,  _______,
+        MC_5,   RGB_TOG,           KC_MNXT),
 
     // Blender Mouse Key Mod Layer
 
     [BLEND] = LAYOUT_numpad_6x5(
-        TO(RGBL),    LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), KC_DEL,
+        TO(MNAV),    LCTL(KC_BTN1), LCTL(KC_BTN3), LCTL(KC_BTN2), KC_DEL,
         KC_TAB,      LSFT(KC_BTN1), LSFT(KC_BTN3), LSFT(KC_BTN2), LCTL(KC_X),
         KC_GRV,      KC_BTN1,       KC_BTN3,       KC_BTN2,       LCTL(KC_C),
         KC_P5,       LALT(KC_BTN1), LALT(KC_BTN3), LALT(KC_BTN2),
@@ -58,20 +73,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         LCTL(KC_Z),  LCA(KC_BTN1),                 KC_ENT),
 
 
-    // RGB Layer
-
-    [RGBL] = LAYOUT_numpad_6x5(
-        TO(MNAV),  KC_MUTE,  KC_VOLD, KC_VOLU,  _______,
-        _______,   RGB_MOD,  RGB_VAI, RGB_HUI,  KC_DEL,
-        _______,   RGB_RMOD, RGB_VAD, RGB_HUD,  _______,
-        _______,   RGB_SAI,  RGB_SPI, _______,
-        _______,   RGB_SAD,  RGB_SPD, _______,  _______,
-        _______,   _______,           _______),
-
     // Mouse Key Layer
 
     [MNAV] = LAYOUT_numpad_6x5(
-        TO(BLEND), _______,  _______,  _______,  _______,
+        TO(NUMPAD),_______,  _______,  _______,  _______,
         _______,   _______,  _______,  _______,  KC_ACL0,
         _______,   KC_BTN1,  KC_MS_U,  KC_BTN2,  KC_ACL1,
         _______,   KC_MS_L,  KC_BTN3,  KC_MS_R,
@@ -80,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Flip Layer
 
-    [FLIP] = LAYOUT_numpad_6x5(
+/*     [FLIP] = LAYOUT_numpad_6x5(
 
         TO(BLEND), _______,  _______,  _______, _______,
         _______,   _______,  _______,  _______, _______,
@@ -89,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,   _______,  _______,  _______, _______,
         _______,   _______,            _______),
 
-    // NUMPAD Layer
+ */    // NUMPAD Layer
 
 /*     [NUMPAD] = LAYOUT_numpad_6x5(
         TO(BLEND), KC_MUTE,  KC_ESC,  KC_BSPC,  KC_TAB,
@@ -151,13 +156,13 @@ bool rgb_matrix_indicators_user(void) {
         case MNAV:   //Layer 2
             rgb_matrix_set_color(21, 255, 255, 255);
             break;
-        /* case NUMPAD:  //layer 3
+        case NUMPAD:  //layer 3
             rgb_matrix_set_color(15, 255, 255, 255);
-            break; */
-        case FLIP:
+            break;
+/*         case FLIP:
             rgb_matrix_set_color(24, 255, 255, 255);
             break;
-        default:
+ */        default:
             break;
     }
     return false;
@@ -168,8 +173,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [BLEND] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
     [RGBL] = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI) },
     [MNAV] = { ENCODER_CCW_CW(_______, _______) },
-    // [NUMPAD] = { ENCODER_CCW_CW(_______, _______) },
-    [FLIP] = { ENCODER_CCW_CW(_______, _______) }
+    [NUMPAD] = { ENCODER_CCW_CW(_______, _______) },
+    // [FLIP] = { ENCODER_CCW_CW(_______, _______) }
 };
 #endif // ENCODER_MAP_ENABLE
 
